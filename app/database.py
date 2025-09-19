@@ -9,7 +9,7 @@ from typing import Optional
 MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017")
 DATABASE_NAME = "tourism_india"
 
-# Atlas connection (commented out for local development)
+# Atlas connection (uncomment to use Atlas)
 # MONGO_URL = "mongodb+srv://231001027_db_user:tourism_user@cluster0.rkmshaj.mongodb.net/tourism_india?retryWrites=true&w=majority&appName=Cluster0"
 
 # Global database connection
