@@ -1,4 +1,4 @@
-# Railway ignore file
+# Railway ignore file - Force Docker build
 __pycache__/
 *.pyc
 *.pyo
@@ -29,3 +29,9 @@ quick_*.py
 fix_*.py
 atlas_*.py
 switch_*.py
+
+# Force Docker build by ignoring these
+Procfile
+package.json
+composer.json
+requirements.txt.bak
