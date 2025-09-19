@@ -5,11 +5,13 @@ from typing import Optional
 
 # MongoDB configuration - Railway deployment
 
-# Use Railway MongoDB if available, otherwise local for development
-MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017")
+# Use MongoDB Atlas for production
 DATABASE_NAME = "tourism_india"
 
-# Atlas connection (uncomment to use Atlas)
+# Atlas connection string - use environment variable for security
+MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017")
+
+# Atlas connection (uncomment and use in Railway environment variables)
 # MONGO_URL = "mongodb+srv://231001027_db_user:tourism_user@cluster0.rkmshaj.mongodb.net/tourism_india?retryWrites=true&w=majority&appName=Cluster0"
 
 # Global database connection
