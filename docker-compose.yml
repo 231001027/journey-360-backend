@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017
+      - DATABASE_NAME=tourism_india
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+    command: ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=tourism_india
+
+volumes:
+  mongodb_data:
