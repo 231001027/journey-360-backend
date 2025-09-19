@@ -4,15 +4,8 @@ import subprocess
 import sys
 
 def main():
-    # Get PORT from environment variable or use default
-    port = os.environ.get('PORT', '8000')
-    
-    # Ensure port is a valid integer
-    try:
-        port = int(port)
-    except ValueError:
-        print(f"Invalid PORT value: {port}, using default 8000")
-        port = 8000
+    # Railway typically uses port 8000, so let's use that directly
+    port = 8000
     
     print(f"Starting server on port {port}")
     print(f"Environment variables: PORT={os.environ.get('PORT', 'NOT SET')}")

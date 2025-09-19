@@ -22,5 +22,5 @@ RUN chmod +x start.sh
 # Expose port 8000 (Railway will override with $PORT)
 EXPOSE 8000
 
-# Use the Python startup script (more reliable for PORT handling)
-CMD ["python", "start.py"]
+# Use direct uvicorn command with fixed port
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
