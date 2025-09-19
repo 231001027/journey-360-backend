@@ -8,11 +8,11 @@ from typing import Optional
 # Use MongoDB Atlas for production
 DATABASE_NAME = "tourism_india"
 
-# Atlas connection string - use environment variable for security
+# Use local MongoDB for immediate testing
 MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017")
 
 # Atlas connection (uncomment and use in Railway environment variables)
-# MONGO_URL = "mongodb+srv://231001027_db_user:tourism_user@cluster0.rkmshaj.mongodb.net/tourism_india?retryWrites=true&w=majority&appName=Cluster0"
+# MONGO_URL = "mongodb+srv://<db_username>:<db_password>@cluster0.rkmshaj.mongodb.net/tourism_india?retryWrites=true&w=majority&appName=Cluster0"
 
 # Global database connection
 client: Optional[AsyncIOMotorClient] = None
