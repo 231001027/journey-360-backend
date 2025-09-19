@@ -22,5 +22,5 @@ RUN chmod +x start.sh
 # Expose port 8000 (Railway will override with $PORT)
 EXPOSE 8000
 
-# Use the startup script
-CMD ["./start.sh"]
+# Use the Python startup script (more reliable for PORT handling)
+CMD ["python", "start.py"]
