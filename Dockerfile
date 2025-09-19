@@ -19,5 +19,5 @@ COPY . .
 # Expose port 8000
 EXPOSE 8000
 
-# Start the application directly with fixed port
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use Railway startup script
+CMD ["python", "railway-start.py"]
