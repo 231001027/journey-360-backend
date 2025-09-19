@@ -16,11 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Make start script executable
-RUN chmod +x start.sh
-
-# Expose port 8000 (Railway will override with $PORT)
+# Expose port 8000
 EXPOSE 8000
 
-# Use direct uvicorn command with fixed port
+# Start the application directly
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
